@@ -133,10 +133,10 @@ After preprocessing:
 * **Kyiv**: Highly centralized high-price core on Right Bank (city center + wartime factors: deeper subway shelters, avoiding bridge crossings during air raids).
 * **Lviv**: Strong concentration of expensive properties in historic/central districts; clear price drop in periphery.
 
-> `![Kyiv Rent](images/geospatial_kyiv_rent.png)`  
-> `![Kyiv Sale](images/geospatial_kyiv_sale.png)`  
-> `![Lviv Rent](images/geospatial_lviv_rent.png)`  
-> `![Lviv Sale](images/geospatial_lviv_sale.png)`
+> ![Kyiv Rent](images/geospatial_kyiv_rent.png)  
+> ![Kyiv Sale](images/geospatial_kyiv_sale.png)  
+> ![Lviv Rent](images/geospatial_lviv_rent.png)  
+> ![Lviv Sale](images/geospatial_lviv_sale.png)
 
 ### Market Dynamics
 Prices in all four segments show steady upward trend in USD, following USD/UAH exchange rate. Notably, prices did NOT crash permanently during heavy missile strike months — market adapted by pricing risks into specific features rather than overall value drops.
@@ -144,7 +144,7 @@ Prices in all four segments show steady upward trend in USD, following USD/UAH e
 ### Positive Features During Blackouts
 Massive price divergence starting late 2024 between apartments WITH autonomous features (lift, internet, water, power) vs. WITHOUT them. Market dynamically re-priced these features after severe infrastructure shocks.
 
-> `![Autonomy Premium Emergence](images/autonomy_premium_emergence.png)`
+> ![Autonomy Premium Emergence](images/autonomy_premium_emergence.png)
 
 ### Structural Confounders
 Apartments with gas (`has_gas`) or sold by owners (`is_owner`) appear cheaper in simple charts — BUT this is confounded: gas mostly in old, cheap Soviet housing; modern expensive buildings are fully electric. Requires regression controls for building age and renovation quality.
@@ -152,7 +152,7 @@ Apartments with gas (`has_gas`) or sold by owners (`is_owner`) appear cheaper in
 ### Institutional Market Distortions
 "eOselia"-eligible listings show persistently higher prices, confirming sellers inflate prices to offset 7.5% tax burden and banking bureaucracy.
 
-> `![eOselia Price Markup Effect](images/eoselia_markup.png)`
+> ![eOselia Price Markup Effect](images/eoselia_markup.png)
 
 ### High-Rise Paradox
 Despite blackout/drone strike risks, high-rises (25+ floors) remain most expensive, especially in sales.
@@ -161,7 +161,7 @@ Despite blackout/drone strike risks, high-rises (25+ floors) remain most expensi
 * **Kyiv**: Severe sales supply (15k–25k active listings) + tight rental market → preference for rental flexibility.
 * **Lviv**: Acute "rental squeeze" (sharp drop in rental listings) in late 2025 → recent price surges.
 
-> `![Lviv Rental Market Anomaly Gap](images/lviv_rental_gap_2025.png)`
+> ![Lviv Rental Market Anomaly Gap](images/lviv_rental_gap_2025.png)
 
 ---
 
