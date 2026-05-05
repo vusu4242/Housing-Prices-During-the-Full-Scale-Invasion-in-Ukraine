@@ -13,12 +13,14 @@
 * **The Solution**: A War-Adjusted Pricing Model that quantifies the exact extra value paid for safety and utility independence.
 
 ### Stakeholders
-* **Developers**: Maximize ROI by identifying the most profitable features (autonomy_power, safety factors).
-* **Banks & Fintech (eOselia)**: Refine collateral valuations by factoring in energy and security risks.
-* **PropTech (LUN, OLX)**: Enhance platforms by introducing a "Utility & Safety Score".
-* **Sellers & Landlords**: Optimize pricing with data-driven markups for autonomous features.
+
+* **Banks Fintech (eOselia)** — To refine collateral valuation for mortgages. Banks need to know the fair market price adjusted for energy and security risks to manage their eOselia loan portfolios.
+* **Real Estate Agencies Realtors** — To support more accurate property valuation and pricing strategies. Agents can justify price differences based on features like energy autonomy or building characteristics.
+* **Property Marketplaces (LUN, OLX, etc.)** — To enhance platform functionality through features such as a "Utility Safety Score" or automated price estimation tools based on listing parameters, helping users better compare properties.
+* **Individual Sellers Landlords** — To enable data-driven price optimization. Owners can estimate the fair market value of their property based on its characteristics and avoid underpricing or overpricing
 
 ### Core Hypotheses
+
 * **H1 (Standard Structural)**: Basic physical features (area, renovation) still have major impact despite the war.
 * **H2 (Autonomy)**: Properties with autonomous utilities have positive impact on price that peaks after severe blackouts.
 * **H3 (Physical Security)**: Proximity to subway stations (bomb shelters) and lower floors create distinct safety value.
@@ -131,11 +133,10 @@ After preprocessing:
 * **Kyiv**: Highly centralized high-price core on Right Bank (city center + wartime factors: deeper subway shelters, avoiding bridge crossings during air raids).
 * **Lviv**: Strong concentration of expensive properties in historic/central districts; clear price drop in periphery.
 
-> *(Note: You can add your images here by replacing the path)*  
-> `![Kyiv Rent](geospatial_kyiv_rent.png)`  
-> `![Kyiv Sale](geospatial_kyiv_sale.png)`  
-> `![Lviv Rent](geospatial_lviv_rent.png)`  
-> `![Lviv Sale](geospatial_lviv_sale.png)`
+> `![Kyiv Rent](images/geospatial_kyiv_rent.png)`  
+> `![Kyiv Sale](images/geospatial_kyiv_sale.png)`  
+> `![Lviv Rent](images/geospatial_lviv_rent.png)`  
+> `![Lviv Sale](images/geospatial_lviv_sale.png)`
 
 ### Market Dynamics
 Prices in all four segments show steady upward trend in USD, following USD/UAH exchange rate. Notably, prices did NOT crash permanently during heavy missile strike months — market adapted by pricing risks into specific features rather than overall value drops.
@@ -143,7 +144,7 @@ Prices in all four segments show steady upward trend in USD, following USD/UAH e
 ### Positive Features During Blackouts
 Massive price divergence starting late 2024 between apartments WITH autonomous features (lift, internet, water, power) vs. WITHOUT them. Market dynamically re-priced these features after severe infrastructure shocks.
 
-> `![Autonomy Premium Emergence](autonomy_premium_emergence.png)`
+> `![Autonomy Premium Emergence](images/autonomy_premium_emergence.png)`
 
 ### Structural Confounders
 Apartments with gas (`has_gas`) or sold by owners (`is_owner`) appear cheaper in simple charts — BUT this is confounded: gas mostly in old, cheap Soviet housing; modern expensive buildings are fully electric. Requires regression controls for building age and renovation quality.
@@ -151,7 +152,7 @@ Apartments with gas (`has_gas`) or sold by owners (`is_owner`) appear cheaper in
 ### Institutional Market Distortions
 "eOselia"-eligible listings show persistently higher prices, confirming sellers inflate prices to offset 7.5% tax burden and banking bureaucracy.
 
-> `![eOselia Price Markup Effect](eoselia_markup.png)`
+> `![eOselia Price Markup Effect](images/eoselia_markup.png)`
 
 ### High-Rise Paradox
 Despite blackout/drone strike risks, high-rises (25+ floors) remain most expensive, especially in sales.
@@ -160,7 +161,7 @@ Despite blackout/drone strike risks, high-rises (25+ floors) remain most expensi
 * **Kyiv**: Severe sales supply (15k–25k active listings) + tight rental market → preference for rental flexibility.
 * **Lviv**: Acute "rental squeeze" (sharp drop in rental listings) in late 2025 → recent price surges.
 
-> `![Lviv Rental Market Anomaly Gap](lviv_rental_gap_2025.png)`
+> `![Lviv Rental Market Anomaly Gap](images/lviv_rental_gap_2025.png)`
 
 ---
 
@@ -188,20 +189,6 @@ Where $X_{k,i}$ = continuous structural variables, $D_{j,i}$ = binary dummies.
 $$ \log(p_{ist}) = \beta X_{ist} + \alpha_t + \gamma_s + \varepsilon_{ist} $$
 
 $\alpha_t$ = Snapshot Date Fixed Effects, $\gamma_s$ = Microdistrict Fixed Effects.
-
-### Model 3: Dynamic Difference-in-Differences
-**Objective**: Evaluate causal impact of shocks over time.
-
-$$ \log(p_{ist}) = \beta X_{ist} + \sum_{y} \tau_y (\text{Treat}_i \times \text{Year}_y) + \alpha_t + \gamma_s + \varepsilon_{ist} $$
-
-$\tau_y$ = additional value for each year relative to baseline.
-
-### Model 4: Time-Series Macro-Interaction
-**Objective**: Quantify relationship between security variables and property features.
-
-$$ \log(p_{ist}) = \beta X_{ist} + \theta (\text{Autonomy}_i \times \text{Strikes}_t) + \gamma_s + \varepsilon_{ist} $$
-
-$\theta$ = dynamic premium from "fear".
 
 ---
 
@@ -301,12 +288,6 @@ Direct empirical confirmation of shelter-proximity hypothesis. Properties within
 * **H3 (Security)**: Partially confirmed — shelter proximity premium exists in Kyiv; floor-level safety penalty appears only during high-strike periods.
 * **H4 (Institutional)**: Confirmed — eOselia generates price markup.
 * **H5 (Geospatial)**: Confirmed — Kyiv and Lviv exhibit fundamentally different pricing dynamics and temporal trajectories.
-
-### Stakeholder Implications
-* **Developers**: Autonomous electricity is single most valuable war-related feature. Premium 3× higher in Lviv — prioritize installation in western developments.
-* **Banks/eOselia**: Confirmed 6–10% markup exists. Adjust collateral valuations accordingly.
-* **PropTech**: Metro proximity and autonomy features should receive explicit scoring in Kyiv/Lviv platforms.
-* **Sellers**: Autonomy features command measurable premium — document and advertise them prominently, especially in rental market.
 
 ---
 
